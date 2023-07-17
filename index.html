@@ -1,45 +1,5 @@
 <html>
-<script src='https://d3js.org/d3.v5.min.js'></script>
 <body>
-<svg width=300 height=300>
-</svg>
-<script>
-const width=d3.select("svg").attr("width")
-const height=d3.select("svg").attr("height")
-const margin={top:50, right:50, bottom:50, left:50}
-
-xs=d3.scaleLog().domain([10,150]).range([0, width - margin.left - margin.right]).base(10)
-ys=d3.scaleLog().domain([10,150]).range([height - margin.top - margin.bottom,0]).base(10)
-rs=d3.scaleLog().domain([0,12]).range([0, width - margin.left - margin.right]).base(10)
-
-x_axis=d3.axisBottom(xs).tickValues([10,20,50,100]).tickFormat(function(d){return d3.format("~s")(d)})
-y_axis=d3.axisLeft(ys).tickValues([10,20,50,100]).tickFormat(function(d){return d3.format("~s")(d)})
-
-const data=await d3.csv("https://flunky.github.io/cars2017.csv")
-
-d3.select("svg")
-.append("g")
-.attr("transform", "translate("+margin.left+","+margin.top+")")
-.selectAll("scatterplot")
-.data(data)
-.enter()
-.append("circle")
-.attr("cx", function(d,i){return xs(d.AverageCityMPG)})
-.attr("cy", function(d,i){return ys(d.AverageHighwayMPG)})
-.attr("r", function(d,i){return 2+ +d.EngineCylinders});
-
-d3.select("svg")
-.append("g")
-.attr("transform", "translate("+margin.left+","+margin.top+")")
-.call(y_axis)
-
-
-d3.select("svg")
-.append("g")
-.attr("transform", "translate("+margin.left+","+(height-margin.bottom)+")")
-.call(x_axis)
-//just the comment
-  
-  </script>
+<p> This is a test code </p>
 </body>
 </html>
