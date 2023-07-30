@@ -29,7 +29,16 @@
                 left: 70px;
                 z-index: 1;
                 background-color: #f3f0f0;
-                border: 2px solid #d62728;
+                border: 2px solid #212970;
+                padding: 10px;
+               }
+    .nextInformation {
+                position: absolute;
+                top: 800px;
+                left: 150px;
+                z-index: 1;
+                background-color: #f3f0f0;
+                
                 padding: 10px;
                }
     .drillDownData {
@@ -48,13 +57,21 @@
   <div id="page1" class="activePage passivePage">
     <div class="pageContent">
       <h3>Attempts of glory on the slopes of Mt. Everest</h2>
-      <p>In 1924, a british mountaineer named George Mallory disappeared on the slopes of Mt. Everest.
-        He missed the annals of history by 800 feets to be the first person at the top of the world. 
-        Now, more and more people are attempting for the summit than ever before. <br> <br> After the 
-        first solo acscent and winter ascent in 1980, there was a surge in number of attempts.
+      <p>Mt. Everest, which lies in Nepal, is the highest peak in the world. It is renowned for its unforgiving terrain and ever changing climate.
+        It has always commanded fascination. Few dared to step foot on it. <br><br>
+        
+        In 1924, a british mountaineer named George Mallory 
+        disappeared on the slopes of Mt. Everest. He missed the annals of history by 800 feets to be the first person at the top of the world. 
+        In 1953 Tenzing Norgay and Sir Edmund Hillary finally conquered it. A thunderous message was sent. Men on the top of the world!! <br><br>
+
+        <b>Ever wondered how many attempted for glory, how many prevailed and whether injury is the significant contributor for failure? </b>  
+        If yes, you are in the right page. Here we'll find answers to those questions, and along the way, we'll also see some significant milestones 
+        etched by brave hearts.      
+
       </p>
     </div>
-    <svg id = "lineChart1" width = 800 height = 600></svg>
+    <svg id = "lineChart1" width = 800 height = 550></svg>
+    <text class = "nextInformation">[Scene 1/3] Click "Next" for successes and failure</text>
   </div>
 
   <!-- Page 2 -->
@@ -68,6 +85,7 @@
       </p>
     </div>
     <svg id = "lineChart2" width = 800 height = 600></svg>
+    <text class = "nextInformation">[Scene 2/3] Click "Next" for injury and non-injury</text>
   </div>
 
   <!-- Page 3 -->
@@ -107,6 +125,7 @@
       <div id ="lineChart3Secondary2", style="font-weight: normal"></div> <!--Create pieChart3_1 here-->
       <div id ="lineChart3Secondary3", style="font-weight: normal"></div> <!--Create pieChart3_1 here-->
     </div>
+    <text class = "nextInformation">[Scene 3/3] All done</text>
   </div>
 
   <!-- Next and Previous buttons -->
