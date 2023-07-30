@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <script src = 'https://d3js.org/d3.v5.min.js'></script>
+  <script src='https://d3js.org/d3.v5.min.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-annotation/2.5.1/d3-annotation.min.js"></script>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -52,7 +52,7 @@
     }
   </style>
 </head>
-<body onload = 'init()'>
+<body onload='init()'>
   <!-- Page 1 -->
   <div id="page1" class="activePage passivePage">
     <div class="pageContent">
@@ -70,8 +70,8 @@
 
       </p>
     </div>
-    <svg id = "lineChart1" width = 800 height = 550></svg>
-    <text class = "nextInformation">[Scene 1/3] Click "Next" for successes and failure</text>
+    <svg id="lineChart1" width=800 height=550></svg>
+    <text class="nextInformation">[Scene 1/3] Click "Next" for successes and failure</text>
   </div>
 
   <!-- Page 2 -->
@@ -84,8 +84,8 @@
         in an earthquake-spawned avalanche.
       </p>
     </div>
-    <svg id = "lineChart2" width = 800 height = 600></svg>
-    <text class = "nextInformation">[Scene 2/3] Click "Next" for injury and non-injury</text>
+    <svg id="lineChart2" width=800 height=600></svg>
+    <text class="nextInformation">[Scene 2/3] Click "Next" for injury and non-injury</text>
   </div>
 
   <!-- Page 3 -->
@@ -95,7 +95,7 @@
       <p>The number of injury has remained relatively small throughout the years. When analyzing the number of injuries and numbers of non-injuries
         for unsuccessful attempts, the number of injuries has been staying pretty low. </p>
     </div>
-    <div class="lineChart3", id ="lineChart3Primary"></div> <!--inside here add svg element lineChart3SuccessTrue and lineChart3SuccessFalse from JS-->
+    <div class="lineChart3", id="lineChart3Primary"></div> <!--inside here add svg element lineChart3SuccessTrue and lineChart3SuccessFalse from JS-->
       <div class="menuOverlay">
       <label> 
         <input type="radio" id="successButton" name="successButton" value="TRUE">IsSuccess <br>
@@ -121,11 +121,11 @@
         </div>
     </div>
     <div class="lineChart3 drillDownData" drillDownData, id ="lineChart3Secondary", style="font-weight: bold"> Drill-down data [Hover for details]
-      <div id ="lineChart3Secondary1", style="font-weight: normal"></div> <!--Create pieChart3_1 here-->
-      <div id ="lineChart3Secondary2", style="font-weight: normal"></div> <!--Create pieChart3_1 here-->
-      <div id ="lineChart3Secondary3", style="font-weight: normal"></div> <!--Create pieChart3_1 here-->
+      <div id="lineChart3Secondary1", style="font-weight: normal"></div> <!--Create pieChart3_1 here-->
+      <div id="lineChart3Secondary2", style="font-weight: normal"></div> <!--Create pieChart3_1 here-->
+      <div id="lineChart3Secondary3", style="font-weight: normal"></div> <!--Create pieChart3_1 here-->
     </div>
-    <text class = "nextInformation">[Scene 3/3] All done</text>
+    <text class="nextInformation">[Scene 3/3] All done</text>
   </div>
 
   <!-- Next and Previous buttons -->
