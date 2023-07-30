@@ -1,5 +1,5 @@
 async function init() {
-    const data = await d3.csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-09-22/members.csv")
+    const data = await d3.csv("./members.csv")
     const dataToWorkWith = data.filter(function(d){return d.peak_name === "Everest"}) //only get the data related to 'Everest'
 
     const allSeason = d3.map(dataToWorkWith, function(d){return d.season}).keys() //get different seasons
