@@ -6,12 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mt. Everest Data Visualization</title>
   <style>
-    .passivePage {
+    .passiveScene {
                 display: none;
                 width: 800px;
                 height: 800px;
               }
-    .activePage {
+    .activeScene {
                 display: block;
                 width: 1100px;
                 height: 800px
@@ -47,14 +47,17 @@
                 border: 1px solid #d62728;
                 padding: 5px;
                }
+    .navButton {
+                display: inline-block;
+    }
     path.note-line {
       opacity: 0
     }
   </style>
 </head>
 <body onload='init()'>
-  <!-- Page 1 -->
-  <div id="page1" class="activePage passivePage">
+  <!-- scene 1 -->
+  <div id="scene1" class="activeScene passiveScene">
     <div class="pageContent">
       <h3>Attempts of glory on the slopes of Mt. Everest</h2>
       <p>Mt. Everest, which lies in Nepal, is the highest peak in the world. It is renowned for its unforgiving terrain and ever changing climate.
@@ -74,8 +77,8 @@
     <text class="nextInformation">[Scene 1/3] Click "Next" for successes and failure</text>
   </div>
 
-  <!-- Page 2 -->
-  <div id="page2" class="passivePage">
+  <!-- scene 2 -->
+  <div id="scene2" class="passiveScene">
     <div class="pageContent">
       <h3>How does successes and failures look like?</h1>
       <p>It was not until after 2004, the number of successes began to surpass number of failures.
@@ -88,8 +91,8 @@
     <text class="nextInformation">[Scene 2/3] Click "Next" for injury and non-injury</text>
   </div>
 
-  <!-- Page 3 -->
-  <div id="page3" class="passivePage">
+  <!-- scene 3 -->
+  <div id="scene3" class="passiveScene">
     <div class="pageContent">
       <h3>Is injury the main contributor of failure?</h1>
       <p>The number of injury has remained relatively small throughout the years. When analyzing the number of injuries and numbers of non-injuries
@@ -121,41 +124,49 @@
         </div>
     </div>
     <div class="lineChart3 drillDownData" drillDownData, id ="lineChart3Secondary", style="font-weight: bold"> Drill-down data [Hover for details]
-      <div id="lineChart3Secondary1", style="font-weight: normal"></div> <!--Create pieChart3_1 here-->
-      <div id="lineChart3Secondary2", style="font-weight: normal"></div> <!--Create pieChart3_1 here-->
-      <div id="lineChart3Secondary3", style="font-weight: normal"></div> <!--Create pieChart3_1 here-->
+      <div id="lineChart3Secondary1", style="font-weight: normal"></div> <!--create pieChart3_1 here-->
+      <div id="lineChart3Secondary2", style="font-weight: normal"></div> <!--create pieChart3_1 here-->
+      <div id="lineChart3Secondary3", style="font-weight: normal"></div> <!--create pieChart3_1 here-->
     </div>
     <text class="nextInformation">[Scene 3/3] All done</text>
   </div>
 
-  <!-- Next and Previous buttons -->
-  <button id="previous" onclick="showPage(-1)">Previous</button>
-  <button id="next" onclick="showPage(1)">Next</button>
+  <!-- "Next" and "Previous" buttons -->
+  <div class="navButton" id="previousButton">
+    <button id="previous" onclick="showPage(-1)">Previous</button>
+  </div>
+  <div class="navButton" id="nextButton">
+    <button id="next" onclick="showPage(1)">Next</button>
+  </div>
 
   <script>
     currentPage = 1
-    const totalPages = 3
+    const totalPageCount = 3     
 
-    function showPage(pageOffset) {
-      currentPage += pageOffset
+    function showPage(offset) {
+      currentPage += offset
+
+      //previousElementId = document.getElementById("previousButton")
+      //console.log(previousElementId)      
 
       if (currentPage < 1) {
         currentPage = 1
-      } else if (currentPage > totalPages) {
-        currentPage = totalPages
+        //previousElementId.style.display = "none"
+      } else if (currentPage > totalPageCount) {
+        currentPage = totalPageCount
       }
       
-      pages = document.querySelectorAll('.passivePage');
-      pages.forEach(page => {
-        page.classList.remove('activePage')
+      scenes = document.querySelectorAll('.passiveScene')
+      scenes.forEach(scene => {
+        scene.classList.remove('activeScene') //remove from active scene
       })
 
-      // Show the current page
-      const currentPageId = `page${currentPage}`;
-      const currentPageElement = document.getElementById(currentPageId);
-      currentPageElement.classList.add('activePage')
+      const currentPageId = "scene" + currentPage
+      const currentPageElement = document.getElementById(currentPageId)
+      //console.log(currentPageElement)
+      currentPageElement.classList.add('activeScene') //add to active scene
     }
   </script>
-  <script src = "./d3.js"></script>
+  <script src = "./d3_new.js"></script>
 </body>
 </html>
